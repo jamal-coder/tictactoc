@@ -124,86 +124,29 @@ function checkResult {
 }
 # --------------- getSign Function ------------------------
 function randSign {
-	if [[ $1 == ${place[0]} && $1 == ${place[1]} ]]; then
+	if [[ "$1" == "${place[4]}" && "$1" == "${place[6]}" ]] || [[ "$2" == "${place[4]}" && "$2" == "${place[6]}" ]] || [[ "$1" == "${place[0]}" && "$1" == "${place[1]}" ]] || [[ "$2" == "${place[0]}" && "$2" == "${place[1]}" ]] || [[ "$1" == "${place[5]}" && "$1" == "${place[8]}" ]] || [[ "$2" == "${place[5]}" && "$2" == "${place[8]}" ]]; then
 		val="13"
-	fi
-	if [[ $1 == ${place[0]} && $1 == ${place[2]} ]]; then
+	elif [[ "$1" == "${place[0]}" && "$1" == "${place[2]}" ]] || [[ "$2" == "${place[0]}" && "$2" == "${place[2]}" ]] || [[ "$1" == "${place[4]}" && "$1" == "${place[7]}" ]] || [[ "$2" == "${place[4]}" && "$2" == "${place[7]}" ]]; then
 		val="12"
-	fi
-	if [[ $1 == ${place[2]} && $1 == ${place[1]} ]]; then
+	elif [[ "$1" == "${place[4]}" && "$1" == "${place[8]}" ]] || [[ "$2" == "${place[4]}" && "$2" == "${place[8]}" ]] || [[ "$1" == "${place[2]}" && "$1" == "${place[1]}" ]] || [[ "$2" == "${place[2]}" && "$2" == "${place[1]}" ]] || [[ "$1" == "${place[3]}" && "$1" == "${place[6]}" ]] || [[ "$2" == "${place[3]}" && "$2" == "${place[6]}" ]]; then
 		val="11"
-	fi
-
-	if [[ $1 == ${place[0]} && $1 == ${place[3]} ]]; then
+	elif [[ "$1" == "${place[7]}" && "$1" == "${place[8]}" ]] || [[ "$2" == "${place[7]}" && "$2" == "${place[8]}" ]] || [[ "$1" == "${place[0]}" && "$1" == "${place[3]}" ]] || [[ "$2" == "${place[0]}" && "$2" == "${place[3]}" ]] || [[ "$1" == "${place[2]}" && "$1" == "${place[4]}" ]] || [[ "$2" == "${place[2]}" && "$2" == "${place[4]}" ]]; then
 		val="31"
-	fi
-	if [[ $1 == ${place[0]} && $1 == ${place[6]} ]]; then
+	elif [[ "$1" == "${place[0]}" && "$1" == "${place[6]}" ]] || [[ "$2" == "${place[0]}" && "$2" == "${place[6]}" ]] || [[ "$1" == "${place[4]}" && "$1" == "${place[5]}" ]] || [[ "$2" == "${place[4]}" && "$2" == "${place[5]}" ]]; then
 		val="21"
-	fi
-	if [[ $1 == ${place[3]} && $1 == ${place[6]} ]]; then
-		val="11"
-	fi
-
-	if [[ $1 == ${place[0]} && $1 == ${place[4]} ]]; then
+	elif [[ "$1" == "${place[6]}" && "$1" == "${place[7]}" ]] || [[ "$2" == "${place[6]}" && "$2" == "${place[7]}" ]] || [[ "$1" == "${place[0]}" && "$1" == "${place[4]}" ]] || [[ "$2" == "${place[0]}" && "$2" == "${place[4]}" ]] || [[ "$1" == "${place[2]}" && "$1" == "${place[5]}" ]] || [[ "$2" == "${place[2]}" && "$2" == "${place[5]}" ]]; then
 		val="33"
-	fi
-	if [[ $1 == ${place[4]} && $1 == ${place[8]} ]]; then
-		val="11"
-	fi
-	if [[ $1 == ${place[0]} && $1 == ${place[8]} ]]; then
+	elif [[ "$1" == "${place[1]}" && "$1" == "${place[7]}" ]] || [[ "$2" == "${place[1]}" && "$2" == "${place[7]}" ]] || [[ "$1" == "${place[3]}" && "$1" == "${place[5]}" ]] || [[ "$2" == "${place[3]}" && "$2" == "${place[5]}" ]] || [[ "$1" == "${place[2]}" && "$1" == "${place[6]}" ]] || [[ "$2" == "${place[2]}" && "$2" == "${place[6]}" ]] || [[ "$1" == "${place[0]}" && "$1" == "${place[8]}" ]] || [[ "$2" == "${place[0]}" && "$2" == "${place[8]}" ]]; then
 		val="22"
-	fi
-
-	if [[ $1 == ${place[1]} && $1 == ${place[4]} ]]; then
+	elif [[ "$1" == "${place[6]}" && "$1" == "${place[8]}" ]] || [[ "$2" == "${place[6]}" && "$2" == "${place[8]}" ]] || [[ "$1" == "${place[1]}" && "$1" == "${place[4]}" ]] || [[ "$2" == "${place[1]}" && "$2" == "${place[4]}" ]]; then
 		val="32"
-	fi
-	if [[ $1 == ${place[4]} && $1 == ${place[7]} ]]; then
-		val="12"
-	fi
-	if [[ $1 == ${place[1]} && $1 == ${place[7]} ]]; then
-		val="22"
-	fi
-
-	if [[ $1 == ${place[2]} && $1 == ${place[5]} ]]; then
-		val="33"
-	fi
-	if [[ $1 == ${place[5]} && $1 == ${place[8]} ]]; then
-		val="13"
-	fi
-	if [[ $1 == ${place[2]} && $1 == ${place[8]} ]]; then
+	elif [[ "$1" == "${place[3]}" && "$1" == "${place[4]}" ]] || [[ "$2" == "${place[3]}" && "$2" == "${place[4]}" ]] || [[ "$1" == "${place[2]}" && "$1" == "${place[8]}" ]] || [[ "$2" == "${place[2]}" && "$2" == "${place[8]}" ]]; then
 		val="23"
+	else
+		xs=$(getRand 3)
+		ys=$(getRand 3)
+		val=$xs$ys
 	fi
-
-	if [[ $1 == ${place[2]} && $1 == ${place[4]} ]]; then
-		val="31"
-	fi
-	if [[ $1 == ${place[4]} && $1 == ${place[6]} ]]; then
-		val="13"
-	fi
-	if [[ $1 == ${place[2]} && $1 == ${place[6]} ]]; then
-		val="22"
-	fi
-
-	if [[ $1 == ${place[3]} && $1 == ${place[4]} ]]; then
-		val="23"
-	fi
-	if [[ $1 == ${place[4]} && $1 == ${place[5]} ]]; then
-		val="21"
-	fi
-	if [[ $1 == ${place[3]} && $1 == ${place[5]} ]]; then
-		val="22"
-	fi
-
-	if [[ $1 == ${place[6]} && $1 == ${place[7]} ]]; then
-		val="33"
-	fi
-	if [[ $1 == ${place[7]} && $1 == ${place[8]} ]]; then
-		val="31"
-	fi
-	if [[ $1 == ${place[6]} && $1 == ${place[8]} ]]; then
-		val="32"
-	fi
-
 	echo $val
 }
 
@@ -251,31 +194,22 @@ while true; do
 	echo "------------------------------------------"
 
 	if [[ $playerTurn == "Computer" ]]; then
-		if [[ $turn -lt 5 ]]; then
+		
+		mySign=$sign
+
+		if [[ $mySign = "X" ]]; then
+			opSign="O"
+		fi
+		if [[ $mySign = "O" ]]; then
+			opSign="X"
+		fi
+
+		getNum=$(randSign "$opSign" "$mySign")
+
+		if [[ ${place[getNum]} != "-" ]]; then
 			xs=$(getRand 3)
 			ys=$(getRand 3)
 			getNum=$xs$ys
-
-		fi
-		if [[ $turn -gt 2 ]]; then
-			
-			mySign=$sign
-
-			if [[ $mySign = "X" ]]; then
-				opSign="O"
-			fi
-			if [[ $mySign = "O" ]]; then
-				opSign="X"
-			fi
-
-			getNum=$(randSign "$opSign")
-
-			if [[ ${place[getNum]} != "-" ]]; then
-				xs=$(getRand 3)
-				ys=$(getRand 3)
-				getNum=$xs$ys
-			fi
-			
 		fi
 
 	else
@@ -358,9 +292,17 @@ while true; do
 		ground
 		break
 	fi
+	if [[ $turn -ge 9 ]]; then
+		playerTurn="Draw"
+		break
+	fi
 	xs=0
 	ys=0
 done
 echo "--------------------------------------------------------|"
-echo "[ $playerTurn ] you won                                 |"
+if [[ $playerTurn == "Draw" ]]; then
+	echo "No Result - Draw"
+else
+	echo "[ $playerTurn ] you won                                 |"
+fi
 echo "--------------------------------------------------------|"
